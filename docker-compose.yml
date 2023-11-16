@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - strfry
+
+  strfry:
+    image: relayable/strfry:latest
+    volumes:
+      - ./strfry/config/strfry.conf:/etc/strfry.conf
+      - ./strfry/db:/app/strfry-db
+
