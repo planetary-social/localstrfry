@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Relay – Nos: The Human Network</title>
+  <meta content="A decentralised strfry instance managed by nos.social for the Nostr network." name="description" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://assets.website-files.com/63c8c3163c6fd628730a6e2b/css/nos-social.4919fb8bf.css" rel="stylesheet"
+    type="text/css" />
+  <link
+    href="https://assets.website-files.com/63c8c3163c6fd628730a6e2b/64167b397dad696551f78fda_iPhone_Spotlight_32_3x.png"
+    rel="shortcut icon" type="image/x-icon" />
+  <link href="https://assets.website-files.com/63c8c3163c6fd628730a6e2b/64167b687e0af512120200c3_App_store_256_1x.png"
+    rel="apple-touch-icon" />
+
+  <style>
+    .flex-container {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+    }
+
+    .text-content {
+      flex: 4;
+      text-align: left;
+    }
+
+    .image-content {
+      flex: 1;
+    }
+
+    .image-content img {
+      width: 100%;
+      height: auto;
+    }
+
+    .server-info-box {
+      background-color: #281b40;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      display: inline-block;
+      text-align: left;
+      max-width: 100%;
+      width: auto;
+    }
+
+    .server-info-box p {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+      .flex-container {
+        flex-direction: column;
+      }
+
+      .text-content {
+        width: 100%;
+      }
+
+      .image-content {
+        width: 50%;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="body">
+  <div class="page-wrapper">
+    <div class="header-wrapper w-nav">
+      <div class="container-default w-container">
+        <div class="header-content-wrapper justify-space">
+          <a href="https://nos.social" class="header-logo-link w-nav-brand">
+            <img
+              src="https://assets.website-files.com/63c8c3163c6fd628730a6e2b/64126b48e41c115e87135ce2_Header-logo.svg"
+              alt="nos.social" width="130" class="header-logo" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section hero v1">
+      <div class="container-default w-container">
+        <h1 class="display-1 text-center">nos.social nostr relay</h1>
+        <div class="flex-container">
+          <div class="text-content">
+            <p class="paragraph-large mg-bottom-40px max-w-812px">
+              Relay.nos.social plays a pivotal role in maintaining a healthy digital environment on <a href="https://nos.social">nos.social</a>.
+              Leveraging the capabilities of the <a
+                href="https://njump.me/npub14h23jzlyvumks4rvrz6ktk36dxfyru8qdf679k7q8uvxv0gm0vnsyqe2sh">Reportinator
+                bot</a>, user notes are analyzed for inappropriate or
+              offensive content using OpenAI's moderation API. Notes identified as such are published directly to our
+              relay as kind 1984, ensuring immediate storage and handling. In our app, these flagged notes are
+              distinctively rendered, requiring users to actively choose to view them, in support of a healthy and
+              constructive online discourse. This process aligns with <a
+                href="https://github.com/nostr-protocol/nips/blob/master/56.md">NIP-56</a>, underlining our dedication
+              to user safety
+              and content integrity.
+            </p>
+            <p class="paragraph-large mg-bottom-40px max-w-812px">
+              To use this relay, add <code><strong>wss://relay.nos.social</strong></code> to your client relays on clients that handle
+              moderation reports like the <a href="https://nos.social">nos.social</a> app.
+            </p>
+          </div>
+          <div class="image-content">
+            <img src="/example.png" alt="Mobile App Screenshot">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container-default w-container">
+        <div class="inner-container max-w-1080px">
+          <div class="text-center mg-bottom-56px">
+            <h2 class="display-2 text-center">Server Information</h2>
+            <div class="server-info-box">
+              <p class="paragraph-medium"><strong>Contact npub:</strong> <a
+                  href="https://njump.me/npub1pu3vqm4vzqpxsnhuc684dp2qaq6z69sf65yte4p39spcucv5lzmqswtfch"
+                  class="text-blue-600 hover:underline dark:hover:text-blue-400">npub1pu3vqm4vzqpxsnhuc684dp2qaq6z69sf65yte4p39spcucv5lzmqswtfch</a>
+              </p>
+              <p class="paragraph-medium"><strong>Software:</strong> <a href="https://github.com/hoytech/strfry"
+                  class="text-blue-600 hover:underline dark:hover:text-blue-400">strfry</a>, Version: 0.9.4</p>
+              <p class="paragraph-medium"><strong>Supported NIPs:</strong> [1,2,4,9,11,12,16,20,22,28,33,40]</p>
+            </div>
+          </div>
+          <div class="text-center mg-top-56px">
+            <h3 class="display-3">Contact</h3>
+            <p class="paragraph-large">For any inquiries, contact us via <a href="https://nos.social"
+                class="text-blue-600 hover:underline dark:hover:text-blue-400">nos.social</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-wrapper">
+      <div class="container-default w-container">
+        <div class="footer-info">
+          <a href="https://nos.social" class="footer-logo-wrapper w-inline-block">
+            <img
+              src="https://assets.website-files.com/63c8c3163c6fd628730a6e2b/64127ccfd8bb7f259fdd5cf4_Footer-logo.svg"
+              alt="nos.social" class="footer-logo" />
+          </a>
+          <p class="color-secondary max-w-358px mg-bottom-0">Copyright 2023 © Verse Communications</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
