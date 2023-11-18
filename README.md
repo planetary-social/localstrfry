@@ -46,4 +46,4 @@ Contributions to localstrfry are welcome. Please follow the standard GitHub pull
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/planetary-social/localstrfry/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/planetary-social/localstrfry/blob/main/LICENSE) file for details.
