@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Relay – Nos: The Human Network</title>
-  <meta content="A decentralised strfry instance managed by nos.social for the Nostr network." name="description" />
+  <title>nos relay</title>
+  <meta
+    content="Nos.social relay page detailing integration with OpenAI's API for content moderation and instructions to connect via wss://relay.nos.social. Includes server information and contact details."
+    name="description" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="https://assets.website-files.com/63c8c3163c6fd628730a6e2b/css/nos-social.4919fb8bf.css" rel="stylesheet"
     type="text/css" />
@@ -66,8 +68,8 @@
       }
 
       .image-content {
-        width: 50%;
         margin: auto;
+        width: 30%;
       }
     }
   </style>
@@ -89,25 +91,24 @@
 
     <div class="section hero v1">
       <div class="container-default w-container">
-        <h1 class="display-1 text-center">nos.social nostr relay</h1>
+        <h1 class="display-1 text-center">nos relay</h1>
         <div class="flex-container">
           <div class="text-content">
             <p class="paragraph-large mg-bottom-40px max-w-812px">
-              Relay.nos.social plays a pivotal role in maintaining a healthy digital environment on <a href="https://nos.social">nos.social</a>.
-              Leveraging the capabilities of the <a
+              The relay hosted at wss://relay.nos.social is key to maintaining a positive digital environment on <a
+                href="https://nos.social">nos.social</a>. Using the <a
                 href="https://njump.me/npub14h23jzlyvumks4rvrz6ktk36dxfyru8qdf679k7q8uvxv0gm0vnsyqe2sh">Reportinator
-                bot</a>, user notes are analyzed for inappropriate or
-              offensive content using OpenAI's moderation API. Notes identified as such are published directly to our
-              relay as kind 1984, ensuring immediate storage and handling. In our app, these flagged notes are
-              distinctively rendered, requiring users to actively choose to view them, in support of a healthy and
-              constructive online discourse. This process aligns with <a
-                href="https://github.com/nostr-protocol/nips/blob/master/56.md">NIP-56</a>, underlining our dedication
-              to user safety
-              and content integrity.
+                bot</a>, user content is analyzed for appropriateness via OpenAI's moderation API. Notes flagged for
+              moderation are directly managed by our relay and marked as kind 1984, ensuring their immediate handling.
+              This aligns with <a href="https://github.com/nostr-protocol/nips/blob/master/56.md">NIP-56</a> and
+              underscores our commitment to user safety and content integrity.
             </p>
             <p class="paragraph-large mg-bottom-40px max-w-812px">
-              To use this relay, add <code><strong>wss://relay.nos.social</strong></code> to your client relays on clients that handle
-              moderation reports like the <a href="https://nos.social">nos.social</a> app.
+              To connect to this relay, simply add <code><strong>wss://relay.nos.social</strong></code> to the list of
+              relays in your nostr client. For proper integration with moderation reports, follow the <a
+                href="https://njump.me/npub14h23jzlyvumks4rvrz6ktk36dxfyru8qdf679k7q8uvxv0gm0vnsyqe2sh">Reportinator
+                bot</a>. This setup is akin to the one used by the <a href="https://nos.social">nos.social</a> app,
+              though other clients might have different methods of handling moderation reports.
             </p>
           </div>
           <div class="image-content">
@@ -134,8 +135,8 @@
           </div>
           <div class="text-center mg-top-56px">
             <h3 class="display-3">Contact</h3>
-            <p class="paragraph-large">For any inquiries, contact us via <a href="https://nos.social"
-                class="text-blue-600 hover:underline dark:hover:text-blue-400">nos.social</a></p>
+            <p class="paragraph-large">For any inquiries, please contact us via <a href="https://nos.social"
+                class="text-blue-600 hover:underline dark:hover:text-blue-400">nos.social</a>.</p>
           </div>
         </div>
       </div>
