@@ -2,7 +2,7 @@
 
 const WHITELIST = {
   pubs: {
-    c357827214b0f96fd581ed52bb1d486b5dbb115a760136036857176e8ea17647: true,
+    add5190be4673768546c18b565da3a699241f0e06a75e2dbc03f18663d1b7b27: true, //Reportinator
   },
   eventKinds: [
     0, // Metadata
