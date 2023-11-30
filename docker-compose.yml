@@ -1,28 +1,43 @@
-version: '3'
+---
+version: "3.3"
 
 services:
-  openresty:
-    image: openresty/openresty:1.21.4.3-1-jammy
+
+  traefik:
+    image: "traefik:v2.10"
+    container_name: "traefik"
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
     ports:
-      - '80:80'
-      - '443:443'
+      - "80:80"
     volumes:
-      - ./openresty/nginx.default.conf:/etc/nginx/conf.d/default.conf
-      - ./html:/usr/local/openresty/nginx/html
-      - ./openresty/letsencrypt:/etc/letsencrypt
-    depends_on:
-      - strfry
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
   strfry:
     image: relayable/strfry:latest
+    container_name: "strfry"
+    restart: always
     volumes:
       - ./strfry/config/strfry.conf:/etc/strfry.conf
       - ./strfry/db:/app/strfry-db
       - ./strfry/plugins:/app/plugins
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.strfry.rule=Headers(`Accept`, `application/nostr+json`) || HeadersRegexp(`Connection`, `(?i)Upgrade`)" #" && HeadersRegexp(`Upgrade`, `websocket`)"
+      - "traefik.http.routers.strfry.entrypoints=web"
+      - "traefik.http.services.strfry.loadbalancer.server.port=7777"
+
+  redirect-service:
+    image: nginx:alpine
+    container_name: "redirect-service"
+    restart: always
     volumes:
-      - ./openresty/letsencrypt:/etc/letsencrypt
-      - ./html:/usr/local/openresty/nginx/html
-    command: certonly --webroot -w /usr/local/openresty/nginx/html --force-renewal --email daniel@nos.social -d relay.nos.social --agree-tos
+      - ./redirect-service/nginx-redirect.conf:/etc/nginx/conf.d/default.conf
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.redirect-service.rule=Host(`localhost`)"
+      - "traefik.http.routers.redirect-service.entrypoints=web"
+      - "traefik.http.services.redirect-service.loadbalancer.server.port=80"
+
